@@ -1,2 +1,7 @@
-# Simple-Gin-Example
-基于Gin开发web服务模板
+# gin-quick-start
+
+Gin服务端样例
+
+# Swagger文档生成
+
+swag init

@@ -1,0 +1,41 @@
+definitions:
+  models.Result-string:
+    properties:
+      data:
+        description: data
+        type: string
+      status:
+        description: status
+        type: integer
+    type: object
+host: 127.0.0.1:9000
+info:
+  contact: {}
+  title: Web Server Documentation
+  version: 1.0.0
+paths:
+  /v1/hello-word:
+    get:
+      description: Hello World
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/models.Result-string'
+        "403":
+          description: System error
+          schema:
+            $ref: '#/definitions/models.Result-string'
+        "500":
+          description: System error
+          schema:
+            $ref: '#/definitions/models.Result-string'
+      summary: Hello World
+      tags:
+      - API
+schemes:
+- http
+swagger: "2.0"
+tags:
+- description: Web API
+  name: API

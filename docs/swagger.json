@@ -1,0 +1,64 @@
+{
+    "schemes": [
+        "http"
+    ],
+    "swagger": "2.0",
+    "info": {
+        "title": "Web Server Documentation",
+        "contact": {},
+        "version": "1.0.0"
+    },
+    "host": "127.0.0.1:9000",
+    "paths": {
+        "/v1/hello-word": {
+            "get": {
+                "description": "Hello World",
+                "tags": [
+                    "API"
+                ],
+                "summary": "Hello World",
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/models.Result-string"
+                        }
+                    },
+                    "403": {
+                        "description": "System error",
+                        "schema": {
+                            "$ref": "#/definitions/models.Result-string"
+                        }
+                    },
+                    "500": {
+                        "description": "System error",
+                        "schema": {
+                            "$ref": "#/definitions/models.Result-string"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.Result-string": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "description": "data",
+                    "type": "string"
+                },
+                "status": {
+                    "description": "status",
+                    "type": "integer"
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "description": "Web API",
+            "name": "API"
+        }
+    ]
+}
