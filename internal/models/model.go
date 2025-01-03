@@ -13,3 +13,10 @@ func Ok[T any](data T) Result[T] {
 		Data:   data,
 	}
 }
+
+func Fail[T any](data T) Result[T] {
+	return Result[T]{
+		Status: http.StatusBadRequest,
+		Data:   data,
+	}
+}
