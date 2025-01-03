@@ -28,7 +28,7 @@ func HelloWord(c *gin.Context) {
 func UserLogin(c *gin.Context) {
 	var userLogin models.UserLogin
 	if err := c.ShouldBindBodyWithJSON(userLogin); err != nil {
-		c.JSON(http.StatusForbidden, models.Fail(err.Error()))
+		c.JSON(http.StatusOK, models.Fail(err.Error()))
 		return
 	}
 	c.JSON(http.StatusOK, models.Ok(models.UserLoginResponseDTO{
